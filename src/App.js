@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
+import Menu from "./components/Menu";
 import Search from "./components/Search";
-import Pokemons from "./components/Pokemons";
-import { getAllPokemons, getPokemonData } from "./Api/API";
+import Pokedex from "./components/Pokedex";
+import { getAllPokemons } from "./Api/API";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [pokeList, setPokeList] = useState([]);
+  const [pokeList, setPokeList] = useState();
 
   const getAll = async () => {
-    const result = await getAllPokemons(10, 0);
-
-    for(let index = 0; index < result.results.length - 1; index += 1) {
-      const data = await getPokemonData(result.results[index].url);
-      setPokeList(data)
+    try {
+      const data = await getAllPokemons(1,3);
+      setPokeList(data.results);
+    } catch (error) {
+      console.log(error);
     }
   }
 
   useEffect(() => {
     getAll();
-  });
+  }, [])
 
   return (
     <main>
-      <Navbar />
+      <Menu />
       <Search set={ setPokeList }/>
-      <Pokemons Pokemons={ pokeList }/>
+      <Pokedex pokemons={ pokeList }/>
     </main>
   );
 }

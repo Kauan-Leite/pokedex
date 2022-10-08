@@ -1,22 +1,24 @@
-import { useState } from "react";
+import '../styles/Search.css';
 import { searchPokemon } from "../Api/API";
+import { useState } from 'react';
   
 function Search(props) {
   const { set } = props;
   const [pokemon, setPokemon] = useState('');
 
   const handleChange = ({target}) => {
-    setPokemon(target.value);
+    const { value } = target;
+    setPokemon(value)
   }
 
-  const search = async (event) => {
+  const sendSearch = async (event) => {
     event.preventDefault();
     const result = await searchPokemon(pokemon);
-    set([await result])
+    set(await result);
   }
 
   return (
-    <form onSubmit={ search }>
+    <form onSubmit={ sendSearch }>
       <input
         type='text'
         placeholder="Digite o nome do Pokémon..."
