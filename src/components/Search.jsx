@@ -1,5 +1,5 @@
 import '../styles/Search.css';
-import { searchPokemon } from "../Api/API";
+import { searchPokemon, getAllPokemons } from "../Api/API";
 import { useState } from 'react';
   
 function Search(props) {
@@ -14,7 +14,13 @@ function Search(props) {
   const sendSearch = async (event) => {
     event.preventDefault();
     const result = await searchPokemon(pokemon);
-    set([await result]);
+ 
+    if (result === undefined || result.name === undefined) {
+      console.log('404');
+      set(await getAllPokemons(9, 0))
+    } else {
+      set([await result]);
+    }
   }
 
   return (

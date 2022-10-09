@@ -1,3 +1,36 @@
-.pokemon {
-  background-color: rgb(10, 92, 10);
+.pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+.pokemon {
+  background-color: black;
+  border-radius: 6px;
+  text-align: center;
+  width: 250px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.number {
+  padding-top: 10px;
+  color: yellow;
+  font-weight: 700;
+}
+
+.name {
+  color: white;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.type {
+  color: grey;
+  text-transform: capitalize;
+}
+

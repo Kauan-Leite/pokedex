@@ -1,23 +1,29 @@
 import '../styles/Pokemon.css';
-import { getPokemonData } from '../Api/API'
 
 function Pokemon(props) {
   const { pokemons } = props;
 
-  const teste = (poke) => {
+  const showTypes = (poke) => {
+    return poke.types.map((types) => (
+      <spam className={`type ${types.type.name}`} key={`${types.type.name} from ${poke.id}`}>{types.type.name} </spam>
+    ))
+  }
+
+  const showPokemon = (poke) => {
     return poke.map((pokemon) => (
-      <div key={pokemon.name}>
-        <p>{pokemon.name}</p>
-        <p>{pokemon.url}</p>
+      <div className= 'pokemon' key={pokemon.id}>
+        <p className='number'>{pokemon.id}</p>
+        <p className='name'>{pokemon.name}</p>
+        <p>{showTypes(pokemon)}</p>
         <img src={pokemon.sprites.front_default} alt='teste' />
       </div>
     ))
   }
 
   return (
-    <div className='pokemon'>
+    <div className='pokemons'>
       {
-        pokemons ? teste(pokemons) : null
+        pokemons ? showPokemon(pokemons) : null
       }
     </div>
   );

@@ -6,15 +6,11 @@ function Pokedex(props) {
   
   return (
     <div className="pokedex">
-      <p>Pokedex</p>
-
-      {
-        pokemons ? 
-          <Pokemon pokemons={pokemons} />
-        : 'vasco'
-      }
-
-      <Pokemon />
+        {
+          pokemons ? 
+            <Pokemon pokemons={pokemons} />
+          : 'loading'
+        }
     </div>
   );
 }
