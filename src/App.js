@@ -9,8 +9,8 @@ function App() {
 
   const getAll = async () => {
     try {
-      const data = await getAllPokemons(1,3);
-      setPokeList(data.results);
+      const data = await getAllPokemons(9,0);
+      setPokeList(data);
     } catch (error) {
       console.log(error);
     }

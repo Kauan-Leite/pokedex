@@ -14,7 +14,7 @@ function Search(props) {
   const sendSearch = async (event) => {
     event.preventDefault();
     const result = await searchPokemon(pokemon);
-    set(await result);
+    set([await result]);
   }
 
   return (

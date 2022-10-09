@@ -4,15 +4,12 @@ import { getPokemonData } from '../Api/API'
 function Pokemon(props) {
   const { pokemons } = props;
 
-  const getData = async () => {
-    return await getPokemonData(pokemons[0].url);
-  }
-  
   const teste = (poke) => {
     return poke.map((pokemon) => (
       <div key={pokemon.name}>
         <p>{pokemon.name}</p>
         <p>{pokemon.url}</p>
+        <img src={pokemon.sprites.front_default} alt='teste' />
       </div>
     ))
   }

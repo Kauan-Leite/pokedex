@@ -10,9 +10,8 @@ export const searchPokemon = async (pokemon) => {
   }
 }
 
-export const getAllPokemons = async (limit, offset) => {
+export const getPokemonData = async (url) => {
   try {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
     const response = await fetch(url);
 
     return await response.json();
@@ -22,11 +21,19 @@ export const getAllPokemons = async (limit, offset) => {
   }
 }
 
-export const getPokemonData = async (url) => {
+export const getAllPokemons = async (limit, offset) => {
   try {
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
     const response = await fetch(url);
+    const result = await response.json()
 
-    return await response.json();
+    const pokeData = [];
+
+    for (let index = 0; index < result.results.length; index += 1) {
+      pokeData.push(await getPokemonData(result.results[index].url));
+    }
+
+    return pokeData;
 
   } catch (error) {
     console.log(error);
