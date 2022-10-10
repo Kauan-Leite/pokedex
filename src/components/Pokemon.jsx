@@ -5,9 +5,17 @@ function Pokemon(props) {
 
   const showTypes = (poke) => {
     return poke.types.map((types) => (
-      <spam className={`type ${types.type.name}`} key={`${types.type.name} from ${poke.id}`}>{types.type.name} </spam>
+      <span className={`type ${types.type.name}`} key={`${types.type.name} from ${poke.id}`}>{types.type.name} </span>
     ))
   }
+
+  const showImage = (poke) => {
+    if (poke.id < 649) {
+        return <img src={poke.sprites.versions["generation-v"]["black-white"].animated.front_default} alt='teste' />
+    }
+    return <img src={poke.sprites.front_default} alt='teste' />
+  }
+
 
   const showPokemon = (poke) => {
     return poke.map((pokemon) => (
@@ -15,7 +23,7 @@ function Pokemon(props) {
         <p className='number'>{pokemon.id}</p>
         <p className='name'>{pokemon.name}</p>
         <p>{showTypes(pokemon)}</p>
-        <img src={pokemon.sprites.front_default} alt='teste' />
+        {showImage(pokemon)}
       </div>
     ))
   }

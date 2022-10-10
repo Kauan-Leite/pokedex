@@ -13,7 +13,7 @@ function Search(props) {
 
   const sendSearch = async (event) => {
     event.preventDefault();
-    const result = await searchPokemon(pokemon);
+    const result = await searchPokemon(pokemon.toLowerCase());
  
     if (result === undefined || result.name === undefined) {
       console.log('404');
@@ -27,7 +27,7 @@ function Search(props) {
     <form onSubmit={ sendSearch }>
       <input
         type='text'
-        placeholder="Digite o nome do Pokémon..."
+        placeholder="Digite o nome ou Nº da Pokédex do Pokémon..."
         onChange={ handleChange }
         value={ pokemon }
       />

@@ -1,31 +1,8 @@
-import Menu from "./components/Menu";
-import Search from "./components/Search";
-import Pokedex from "./components/Pokedex";
-import { getAllPokemons } from "./Api/API";
-import { useState, useEffect } from "react";
+import Home from './components/Home';
 
 function App() {
-  const [pokeList, setPokeList] = useState();
-
-  const getAll = async () => {
-    try {
-      const data = await getAllPokemons(151,0);
-      setPokeList(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    getAll();
-  }, [])
-
   return (
-    <main>
-      <Menu />
-      <Search set={ setPokeList }/>
-      <Pokedex pokemons={ pokeList }/>
-    </main>
+    <Home />
   );
 }
 

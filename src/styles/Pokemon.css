@@ -5,7 +5,7 @@
 }
 
 .pokemon {
-  background-color: black;
+  background-color: rgb( 34, 34, 34);
   border-radius: 6px;
   text-align: center;
   width: 250px;
@@ -30,7 +30,78 @@
 }
 
 .type {
-  color: grey;
   text-transform: capitalize;
+  font-weight: 700;
 }
 
+.fire {
+  color: orange;
+}
+
+.grass {
+  color: rgb(36, 255, 36);
+}
+
+.water {
+  color: aqua;
+}
+
+.poison {
+  color: rgb(156, 28, 156);
+}
+
+.bug {
+  color: green;
+}
+
+.flying {
+  color: rgb(0, 129, 129);
+}
+
+.normal {
+  color: rgb(173, 173, 173);
+}
+
+.electric {
+  color: yellow;
+}
+
+.ground {
+  color: rosybrown;
+}
+
+.fairy {
+  color: pink;
+}
+
+.fighting {
+  color: rgb(160, 0, 0);
+}
+
+.psychic {
+  color: palevioletred;
+}
+
+.rock {
+  color: grey;
+}
+
+.steel {
+  color: rgb(95, 136, 173);
+}
+
+.ice {
+  color: rgb(169, 212, 212);
+}
+
+.ghost {
+  color: rgb(99, 44, 99);
+}
+
+.dragon {
+  color: rgb(56, 56, 170);
+}
+
+.dark {
+  color: rgb(210, 202, 255);
+}

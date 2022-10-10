@@ -1,0 +1,9 @@
+.filters {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  width: 10%;
+  min-height: 30px;
+}
