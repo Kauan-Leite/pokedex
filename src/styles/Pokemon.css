@@ -5,21 +5,30 @@
 }
 
 .pokemon {
-  background-color: rgb( 34, 34, 34);
+  /* transition: 0.25s; */
+  background-image: linear-gradient(-45deg, rgb(0, 61, 0), green);
   border-radius: 6px;
+  border: 2px solid white;
   text-align: center;
   width: 250px;
   height: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   margin: 20px;
 }
 
+.pokemon:hover {
+  cursor: pointer;
+  width: 255px;
+  height: 305px;
+  transition: 0.25s;
+}
+
 .number {
+  color: white;
   padding-top: 10px;
-  color: yellow;
   font-weight: 700;
 }
 
@@ -32,76 +41,85 @@
 .type {
   text-transform: capitalize;
   font-weight: 700;
+  border-radius: 25px;
+  padding: 0 10px;
+  text-align: center;
+  margin: 0 2px;
 }
 
 .fire {
-  color: orange;
+  background-color: orange;
 }
 
 .grass {
-  color: rgb(36, 255, 36);
+  background-color: rgb(36, 255, 36);
 }
 
 .water {
-  color: aqua;
+  background-color: aqua;
 }
 
 .poison {
-  color: rgb(156, 28, 156);
+  color: white;
+  background-color: rgb(156, 28, 156);
 }
 
 .bug {
-  color: green;
+  color: white;
+  background-color: green;
 }
 
 .flying {
-  color: rgb(0, 129, 129);
+  background-color: rgb(0, 129, 129);
 }
 
 .normal {
-  color: rgb(173, 173, 173);
+  background-color: rgb(173, 173, 173);
 }
 
 .electric {
-  color: yellow;
+  background-color: yellow;
 }
 
 .ground {
-  color: rosybrown;
+  background-color: rosybrown;
 }
 
 .fairy {
-  color: pink;
+  background-color: pink;
 }
 
 .fighting {
-  color: rgb(160, 0, 0);
+  color: white;
+  background-color: rgb(160, 0, 0);
 }
 
 .psychic {
-  color: palevioletred;
+  color: white;
+  background-color: palevioletred;
 }
 
 .rock {
-  color: grey;
+  background-color: grey;
 }
 
 .steel {
-  color: rgb(95, 136, 173);
+  background-color: rgb(95, 136, 173);
 }
 
 .ice {
-  color: rgb(169, 212, 212);
+  background-color: rgb(169, 212, 212);
 }
 
 .ghost {
-  color: rgb(99, 44, 99);
+  color: white;
+  background-color: rgb(99, 44, 99);
 }
 
 .dragon {
-  color: rgb(56, 56, 170);
+  background-color: rgb(56, 56, 170);
 }
 
 .dark {
-  color: rgb(210, 202, 255);
+  background-color: rgb(210, 202, 255);
 }

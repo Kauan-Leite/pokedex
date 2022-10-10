@@ -1,7 +1,6 @@
 form {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 form input {
@@ -19,6 +18,7 @@ form button {
 }
 
 form button:hover {
+  transition: 0.25s;
   background-color: rgb(0, 83, 139);
   cursor: pointer;
 }

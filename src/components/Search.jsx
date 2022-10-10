@@ -1,9 +1,9 @@
 import '../styles/Search.css';
-import { searchPokemon, getAllPokemons } from "../Api/API";
+import { searchPokemon } from "../Api/API";
 import { useState } from 'react';
   
 function Search(props) {
-  const { set } = props;
+  const { set, loading, notFound } = props;
   const [pokemon, setPokemon] = useState('');
 
   const handleChange = ({target}) => {
@@ -13,12 +13,12 @@ function Search(props) {
 
   const sendSearch = async (event) => {
     event.preventDefault();
-    const result = await searchPokemon(pokemon.toLowerCase());
+    const result = await searchPokemon(pokemon.toLowerCase(), loading);
  
     if (result === undefined || result.name === undefined) {
-      console.log('404');
-      set(await getAllPokemons(9, 0))
+      notFound(true);
     } else {
+      notFound(false);
       set([await result]);
     }
   }

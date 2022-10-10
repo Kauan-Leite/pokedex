@@ -1,10 +1,11 @@
-export const searchPokemon = async (pokemon) => {
+export const searchPokemon = async (pokemon, setLoading) => {
   try {
+    setLoading(true);
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
     const response = await fetch(url);
+    setLoading(false);
 
     return await response.json();
-
   } catch (error) {
     console.log(error);
   }

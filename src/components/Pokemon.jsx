@@ -20,8 +20,8 @@ function Pokemon(props) {
   const showPokemon = (poke) => {
     return poke.map((pokemon) => (
       <div className= 'pokemon' key={pokemon.id}>
-        <p className='number'>{pokemon.id}</p>
-        <p className='name'>{pokemon.name}</p>
+          <p className='number'>{pokemon.id}</p>
+          <p className='name'>{pokemon.name}</p>
         <p>{showTypes(pokemon)}</p>
         {showImage(pokemon)}
       </div>
