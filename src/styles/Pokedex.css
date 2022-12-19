@@ -1,3 +1,7 @@
 .pokedex {
   padding-bottom: 10px;
 }
+
+.pokedex p {
+  color: white;
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Pokemon.css';
 
 function Pokemon(props) {
@@ -16,15 +17,19 @@ function Pokemon(props) {
     return <img src={poke.sprites.front_default} alt='teste' />
   }
 
+  const dadosPoke = (id) => {
+    console.log(`Dados from poke: ${id}`);
+  }
+
 
   const showPokemon = (poke) => {
     return poke.map((pokemon) => (
-      <div className= 'pokemon' key={pokemon.id}>
-          <p className='number'>{pokemon.id}</p>
-          <p className='name'>{pokemon.name}</p>
-        <p>{showTypes(pokemon)}</p>
-        {showImage(pokemon)}
-      </div>
+        <div className= 'pokemon' key={pokemon.id} onClick={() => dadosPoke(pokemon.id)}>
+            <p className='number'>{pokemon.id}</p>
+            <p className='name'>{pokemon.name}</p>
+          <p>{showTypes(pokemon)}</p>
+          {showImage(pokemon)}
+        </div>
     ))
   }
 

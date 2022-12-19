@@ -8,8 +8,8 @@ function Pokedex(props) {
     <div className="pokedex">
         {
           pokemons ? 
-            <Pokemon pokemons={pokemons} />
-          : 'loading'
+          <Pokemon pokemons={pokemons} />
+          : null
         }
     </div>
   );
