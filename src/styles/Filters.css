@@ -1,7 +1,7 @@
 .filters {
   display: flex;
   justify-content: space-around;
-  margin: 10px 0;
+  padding: 10px;
 }
 
 button {

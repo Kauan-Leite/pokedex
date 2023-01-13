@@ -1,4 +1,4 @@
-import Menu from "./Menu";
+// import Menu from "./Menu";
 import Filters from "./Filters";
 import Search from "./Search";
 import Pokedex from "./Pokedex";
@@ -21,7 +21,6 @@ function Home() {
 
     return (
     <main>
-      <Menu />
       <Filters set= { setPokeList } loading={ setLoading } notFound={ setNotFound }/>
 
       {
